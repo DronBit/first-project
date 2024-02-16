@@ -143,11 +143,11 @@ Git хранит таблицу соответствий хеш → информ
 #### Жизненный цикл файла в Git
 
 ```mermaid
-graph LR;
-	A[untracked (неотслеживаемый)] -- git add --> B[staged (в списке на коммит) + tracked];
-	B -- git commit --> C[tracked (отслеживаемый)];
-	B -- "Изменения" --> D[modified (изменённый)];
-	D -- git add --> B;
+flowchart LR
+	A(["untracked (неотслеживаемый)"]) -- "git add" --> B(["staged (в списке на коммит) + tracked"]);
+	B -- "git commit" --> C(["tracked (отслеживаемый)"]);
+	B -- "Изменения" --> D(["modified (изменённый)"]);
+	D -- "git add" --> B;
 	C -- "Изменения" --> D;
 ```
 
